@@ -5,10 +5,11 @@ import App from './App.tsx'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root')!).render( //پرووایدر برای دسترسی ریداکس استور به کل پروژه
   <StrictMode>
-    <Provider store={store}>
+    <Provider store={store}>   
       <App />
+    
     </Provider>
-  </StrictMode>,
+  </StrictMode>
 )
