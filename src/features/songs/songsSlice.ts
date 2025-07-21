@@ -6,13 +6,16 @@ interface Song {   // یعنی هر آهنگ باید سه مقدار داشته
   title: string;
   artist: string;
 }
-interface SongsState {  //تعریف ساختار استیت که می‌خواهیم در رداکس نگه‌داری کنیم.
+
+interface SongsState {  //(استیت اصلی)تعریف ساختار استیت که می‌خواهیم در ریداکس نگه‌داری کنیم
   //  در اینجا استیت یک آرایه از آهنگ‌هاست.
   songs: Song[];
 }
+
 const initialState: SongsState = {  //مقدار اولیه‌ی استیت وقتی برنامه شروع می‌شه، لیست آهنگ‌ها خالیه.
   songs: [],
 };
+
 const songsSlice = createSlice({   //ساختن اسلایس به اسم "سونگز". توی ردیوسر اکشن‌هایی تعریف می‌کنیم که استیت رو تغییر می‌دن.
   name: "songs",
   initialState,

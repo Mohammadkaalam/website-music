@@ -2,8 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../../store/store";
 import { useEffect } from "react";
 import { setSongs } from "./songsSlice";   //برای ثبت لیست آهنگ‌ها در استیت استفاده می‌شه.
-
-
+import "./songsList.css"
 
 // نمونه آهنگ‌های فرضی
 const sampleSongs = [
@@ -21,17 +20,29 @@ const SongsList = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className="songs-container">
             <h2>لیست آهنگ‌ها</h2>
-            <ul>
-                {songs.map((song) => (
-                    <li key={song.id}>
-                        {song.title} - {song.artist}
-                    </li>
-                ))}
-            </ul>
+            <table className="songs-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>عنوان</th>
+                        <th>هنرمند</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {songs.map((song, index) => (
+                        <tr key={song.id}>
+                            <td>{index + 1}</td>
+                            <td>{song.title}</td>
+                            <td>{song.artist}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
+
 };
 
 export default SongsList;

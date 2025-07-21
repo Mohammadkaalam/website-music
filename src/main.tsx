@@ -9,7 +9,6 @@ createRoot(document.getElementById('root')!).render( //پرووایدر برای
   <StrictMode>
     <Provider store={store}>   
       <App />
-    
     </Provider>
   </StrictMode>
 )
