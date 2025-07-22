@@ -27,8 +27,11 @@ const songsSlice = createSlice({   //ساختن اسلایس به اسم "سون
     addSong(state, action: PayloadAction<Song>) {   //اکشنی به اسم ادسونگ که فقط یک آهنگ جدید به انتهای آرایه سونگز اضافه می‌کنه
       state.songs.push(action.payload);
     },
+    removeSong(state, action: PayloadAction<string>) {
+      state.songs = state.songs.filter(song => song.id !== action.payload);
+    }
   },
 });
 
-export const { setSongs, addSong } = songsSlice.actions;
+export const { setSongs, addSong, removeSong } = songsSlice.actions;
 export default songsSlice.reducer;
